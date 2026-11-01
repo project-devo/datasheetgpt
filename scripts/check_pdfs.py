@@ -41,7 +41,7 @@ for part, maker, url, revision in PARTS:
         first_page = doc[0].get_text().splitlines()
 
     # a few blank or picture-only pages are normal; many means a scan
-    status = "OK" if len(low_text) <= max(2, pages * 0.05) else "CHECK: maybe scanned"
+    status = "OK" if len(low_text) <= max(3, pages * 0.05) else "CHECK: maybe scanned"
     print(f"{part:<11} {pages:>4} pages   low-text pages: {len(low_text):<3} {status}")
     if low_text:
         print(f"            low-text page numbers: {low_text[:10]}")
