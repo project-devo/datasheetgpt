@@ -21,4 +21,7 @@ data/*.pdf
 # Parsed datasheet text (made by ingest/parse.py)
 data/parsed/
 
+# Chunks (made by ingest/chunk.py)
+data/chunks/
+
 
