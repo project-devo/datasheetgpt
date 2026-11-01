@@ -1,0 +1,9 @@
+part,manufacturer,url,revision,pages,file
+esp32,Espressif,https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf,Version 5.3,78,esp32.pdf
+atmega328p,Microchip,https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf,DS40002061B,653,atmega328p.pdf
+stm32f103,STMicroelectronics,https://www.st.com/resource/en/datasheet/stm32f103c8.pdf,DS5319 Rev 20,114,stm32f103.pdf
+lm358,Texas Instruments,https://www.ti.com/lit/ds/symlink/lm358.pdf,SLOS068AB (revised Oct 2024),68,lm358.pdf
+ne555,Texas Instruments,https://www.ti.com/lit/ds/symlink/ne555.pdf,SLFS022K (revised Mar 2026,39,ne555.pdf
+lm317,Texas Instruments,https://www.ti.com/lit/ds/symlink/lm317.pdf,SLVS044Z (revised Apr 2025),45,lm317.pdf
+mcp3008,Microchip,https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/MCP3004-MCP3008-Data-Sheet-DS20001295.pdf,DS20001295E,42,mcp3008.pdf
+bme280,Bosch Sensortec,https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf,1.24,60,bme280.pdf

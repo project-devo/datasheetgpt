@@ -14,3 +14,8 @@ Thumbs.db
 # Next.js, for web/ later
 node_modules/
 .next/
+
+# Datasheet PDFs (manufacturer copyright; links are in data/sources.csv)
+data/*.pdf
+
+
