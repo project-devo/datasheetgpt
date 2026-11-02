@@ -13,6 +13,16 @@ from main import PARTS, app  # noqa: E402
 from answer import ask  # noqa: E402
 from retrieve import get_model  # noqa: E402
 
+try:
+    import spaces  # only installed on Hugging Face ZeroGPU Spaces
+
+    @spaces.GPU
+    def _zerogpu_placeholder():
+        """ZeroGPU needs one @spaces.GPU function to start. This app runs on CPU and never calls it."""
+        return None
+except ImportError:
+    pass  # running on your laptop, where the spaces package isn't installed
+
 get_model()  # load bge-small at startup, so the first question isn't slow
 
 
