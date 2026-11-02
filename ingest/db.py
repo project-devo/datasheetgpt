@@ -26,6 +26,14 @@ CREATE TABLE IF NOT EXISTS chunks (
 CREATE INDEX IF NOT EXISTS chunks_embedding_hnsw
     ON chunks USING hnsw (embedding vector_cosine_ops);
 CREATE INDEX IF NOT EXISTS chunks_tsv_gin ON chunks USING gin (tsv);
+
+CREATE TABLE IF NOT EXISTS answer_cache (
+    key        text PRIMARY KEY,
+    question   text NOT NULL,
+    config     text NOT NULL,
+    response   jsonb NOT NULL,
+    created_at timestamptz NOT NULL DEFAULT now()
+);
 """
 
 

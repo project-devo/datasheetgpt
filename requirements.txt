@@ -12,3 +12,7 @@ tokenizers
 fastembed
 psycopg[binary]
 pgvector
+
+
+fastapi
+uvicorn
