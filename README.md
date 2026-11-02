@@ -1,5 +1,4 @@
 ---
-
 title: DatasheetGPT
 emoji: 🔌
 colorFrom: blue
@@ -10,7 +9,6 @@ python_version: "3.11"
 app_file: app.py
 pinned: false
 short_description: Ask electronic datasheets, get cited answers
-
 ---
 
 # DatasheetGPT
