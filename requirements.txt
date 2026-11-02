@@ -8,3 +8,7 @@ pdfplumber
 
 
 tokenizers
+
+fastembed
+psycopg[binary]
+pgvector
