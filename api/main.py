@@ -42,3 +42,10 @@ def ask_endpoint(req: AskRequest):
     if part and part not in PARTS:
         raise HTTPException(400, f"Unknown part '{req.part}'. Use one of: {', '.join(sorted(PARTS))}")
     return ask(req.question, part=part, k=req.k)
+
+
+
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
