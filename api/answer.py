@@ -20,10 +20,10 @@ from retrieve import DEFAULT_CONFIG, retrieve  # noqa: E402
 
 load_dotenv()
 
-GEMINI_MODEL = "gemini-3.5-flash"
+GEMINI_MODEL = "gemini-3.1-flash-lite"  # 3.5-flash free tier: only ~20 requests/day
 GROQ_MODEL = "openai/gpt-oss-20b"
 RETRY_CODES = {429, 500, 503}  # rate limit, server error, overloaded
-PROMPT_VERSION = "v2"
+PROMPT_VERSION = "v3"
 NOT_FOUND = "Not found in the datasheets."
 
 SYSTEM_PROMPT = f"""You answer questions about electronic component datasheets.
@@ -86,7 +86,7 @@ def call_gemini(prompt):
 def call_groq(prompt):
     global _groq
     if _groq is None:
-        _groq = Groq(api_key=os.environ["GROQ_API_KEY"], timeout=60)  # seconds
+        _groq = Groq(api_key=os.environ["GROQ_API_KEY"], timeout=60, max_retries=5)  # seconds; retries wait out the 8K tokens/min limit
     reply = _groq.chat.completions.create(
         model=GROQ_MODEL,
         messages=[

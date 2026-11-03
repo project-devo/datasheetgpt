@@ -1,0 +1,322 @@
+{
+ "f807f844c001253ecc97c2e18527a3486afab645ed4f9207404c8eba2af1c478": {
+  "verdict": "correct",
+  "reason": "Provides the expected 10 µA value for deep‑sleep with RTC timer and memory enabled"
+ },
+ "9fd22a49e8a39d48de288fb5991f30cf0f97f1c825ecf133649a14ab369561ec": {
+  "verdict": "correct",
+  "reason": "Provides the expected 10,000 (10 k) cycles rating"
+ },
+ "ac611916160e817884b319d4e5bd67f12d84f654ab71d4d688cdb7f33420cdaf": {
+  "verdict": "correct",
+  "reason": "Provides the expected 520 KB on-chip SRAM"
+ },
+ "e32d3deddc592a0651661b7a3bf2d2bdd69cfab12b62436e924c1d4324ad59eb": {
+  "verdict": "correct",
+  "reason": "Provides the expected 18 channels and 12-bit resolution"
+ },
+ "4307578f62b26f0331b6831c83750268efb8b6486ad21c6e2972cce73f0f73b5": {
+  "verdict": "correct",
+  "reason": "Provides the expected 5 µA value"
+ },
+ "d677a4e34eca0ff3df4f07c8b8694c07d2a0f5370b160a8412945f842363c4b7": {
+  "verdict": "correct",
+  "reason": "Provides the expected typical resistance value of 45 kΩ"
+ },
+ "f307373b513507c5580f517ae70c395beabb49305ac928986f1834363c63d9b5": {
+  "verdict": "correct",
+  "reason": "Provides the expected typical current of 240 mA"
+ },
+ "7ca01b816a0f609265581a246125694d7ff900998a4c17a66738bf108d5cfa7f": {
+  "verdict": "correct",
+  "reason": "Provides the exact 72 MHz frequency as expected"
+ },
+ "54c942fc80e8e7772047d9d7af5160c1187b8d062150840980ee8711741ea5b6": {
+  "verdict": "correct",
+  "reason": "Provides the expected 20 KB SRAM value"
+ },
+ "5e89be209ecff092706b419adadfdd97589dd06220c22a3a72e6c6fdca9f257c": {
+  "verdict": "correct",
+  "reason": "Provides the exact supply voltage range 2.0 V to 3.6 V"
+ },
+ "06ec44871c0428b38479c98f93e4f16685497e6787c46d4e2322de399f138098": {
+  "verdict": "correct",
+  "reason": "Provides the expected typical standby current of 2 µA"
+ },
+ "d5f7c3c1fba48fd7d34da013dd8da492a216bf41112148ac6ac0e0bd18a069a4": {
+  "verdict": "correct",
+  "reason": "Provides the exact maximum ADC clock frequency of 14,000 kHz as expected"
+ },
+ "852e6248b95d0f9198c6dcf7601de5c842aa30bcb5c122482235eac590eaed50": {
+  "verdict": "correct",
+  "reason": "Provides the correct maximum sink current of 0.025 A (25 mA)"
+ },
+ "8abbaef92d5831660ee05ca499ce3affeb823d09182e0b5028a45af78476dbe9": {
+  "verdict": "correct",
+  "reason": "System correctly states 32KB flash memory"
+ },
+ "d633dd5bf1935d64a50583da38f9af264b99b48e1bed60a08b198ea27b8c0671": {
+  "verdict": "correct",
+  "reason": "Provides the exact expected value of 100,000 cycles"
+ },
+ "97953b624e7cd445f08a9807aa0dd7baded755f60b562ff821118e717d0cd446": {
+  "verdict": "correct",
+  "reason": "Provides the exact recommended supply voltage range 3 V to 30 V"
+ },
+ "9d05771cc7566283f904113cde528b48aad3a474a48fab9cd32f6b5f8a23f025": {
+  "verdict": "correct",
+  "reason": "Provides the expected 0 °C to 70 °C range (additional info does not contradict)"
+ },
+ "c96e56b802c762991ea61c8201f5274e4bc5d22a9bc140de6846705ec5501ba5": {
+  "verdict": "correct",
+  "reason": "System correctly states the output can be shorted indefinitely (unlimited)"
+ },
+ "3b841ecf6facb3bda144990091eef33e82b634d209e3e897a2662078c542f7d5": {
+  "verdict": "correct",
+  "reason": "Provides the expected typical input offset voltage of 3 mV"
+ },
+ "9f1d2b63b20bbfc564bd87990b2cbdeae8b04525e539f7b2c0e3d27cd4bc8451": {
+  "verdict": "wrong",
+  "reason": "System gave 1.2 MHz instead of the expected 0.7 MHz"
+ },
+ "64b36ff04a0cf97b14ba7766854384f54ceba295a9b8082c200aef0977aa6c62": {
+  "verdict": "wrong",
+  "reason": "System gave 500 V/ms instead of the expected 300 V/ms"
+ },
+ "4ff54b3e270e652658c3ae2ace48ded8dd27eb8fc254fd08a7fb52fbeaade717": {
+  "verdict": "correct",
+  "reason": "Provides the exact recommended supply voltage range 4.5 V to 16 V"
+ },
+ "2462837273a6d9a2f68dd6a165207d1f22fc0f077be2d5ebadcd09448179ed74": {
+  "verdict": "correct",
+  "reason": "Matches expected 200 mA current capability"
+ },
+ "612d28b865bd88e2f90a85667f3e48b71762cc14b6e4b46e6f09817d470d4786": {
+  "verdict": "correct",
+  "reason": "Provides the exact formula matching the expected answer"
+ },
+ "d2466641244bf735fa532e326f0d2d1ecf23319bd6b0c0b453970c41005d306d": {
+  "verdict": "wrong",
+  "reason": "System gave 15 mA typical instead of the expected 10 mA typical"
+ },
+ "2c21ac90e8c8adbc08d99bc31ef7260d90dcc22e7c1b80537b1d96ff9e34ce21": {
+  "verdict": "correct",
+  "reason": "Provides the exact expected typical trigger voltage of 1.67 V"
+ },
+ "ec1930583ff26425ff791eefb726fde130e6310810bd0806539fd1c8d17faab8": {
+  "verdict": "correct",
+  "reason": "Provides the same 110 ms pulse duration as expected"
+ },
+ "925e34f081d04f5873023f34a286d76ce6a2b17d1f62de7b783eba78dd9f2cc5": {
+  "verdict": "correct",
+  "reason": "Matches the expected voltage range"
+ },
+ "e52bb0ccf47a1f26ff19232d11f55c88e93b358bdb32d954565b1b32808f49dc": {
+  "verdict": "correct",
+  "reason": "Provides the correct pin number (1)"
+ },
+ "af566dba6f098cc367e9a33535b480180c93bbe6f5b23c582973aac5b6f4d7aa": {
+  "verdict": "partial",
+  "reason": "Provides only the maximum (100 µA) and omits the typical 50 µA value"
+ },
+ "85e545c8f65b44ed34d06e900534aa0409cee87039350763daa7d54b864f1774": {
+  "verdict": "correct",
+  "reason": "Provides the exact maximum output current of 1500 mA as expected"
+ },
+ "2ed3a796440caef42dcca6022cacffb4595b851bdc9d4e3a330aeb3d180e10b8": {
+  "verdict": "wrong",
+  "reason": "System gave 10 mA instead of the expected 3.5 mA (3500 µA)"
+ },
+ "1b601a1888ce04e68556ed3e60863485c800d57ce15dcf39cca8ca1f39a04ff2": {
+  "verdict": "correct",
+  "reason": "Provides the expected 10-bit resolution"
+ },
+ "9a2d73979931034de91257ebec3cce6a5ac127eb01c333ac31a8e3ddad792cf1": {
+  "verdict": "correct",
+  "reason": "System correctly states eight single-ended inputs"
+ },
+ "06e90a9cdce8699f1bde6f66b0316415feefabf1c79a7d00fcdeca71a4e22717": {
+  "verdict": "correct",
+  "reason": "Provides the exact voltage range 2.7 V to 5.5 V"
+ },
+ "c69817e5925f5001f7ced5a4cbc6302c798c8e723bace939b00f8d6067a4ee71": {
+  "verdict": "correct",
+  "reason": "Provides the expected 10 µA value for deep‑sleep mode"
+ },
+ "a7944dcd937c2ebc609b8b783f86fe719b832f8a4350c03be05fa2f9e3ebaacf": {
+  "verdict": "correct",
+  "reason": "System answer includes the expected 520 KB of on-chip SRAM"
+ },
+ "2d7ebed55c9940d55fd38e0cf6be5945b93d1ee455aea78c129d3f6c3e9dab1d": {
+  "verdict": "correct",
+  "reason": "Provides both the 18-channel count and 12-bit resolution matching the expected answer"
+ },
+ "666831c0a75354ba0247577bc2de3840a3d1e711393fc7a301012517edb5e7d0": {
+  "verdict": "correct",
+  "reason": "Provides the exact expected value of 5 µA"
+ },
+ "1e3cf53245c8c3aa52b8024772f0f0cb288003bbd2f0961c723c548519e760a1": {
+  "verdict": "correct",
+  "reason": "Provides the expected typical resistance value of 45 kΩ"
+ },
+ "940e7ac56b62de106251a78787911d12b80e0f9430b2cce81fa132b190b8b7c3": {
+  "verdict": "correct",
+  "reason": "Provides the expected typical current of 240 mA"
+ },
+ "aa6e6156cb2875468508c2c52130fa7219a4c160caae5750ae8c7c15c933d3db": {
+  "verdict": "correct",
+  "reason": "Provides the exact expected frequency of 72 MHz"
+ },
+ "cdd89c89369d28cc298a7e70844843159d86c94ef2af61644ed2dbf341a0194c": {
+  "verdict": "correct",
+  "reason": "Provides the expected 20 KB SRAM value"
+ },
+ "f3ea74145cb17ab1c60d4ea2d82a715d0d5c3a2de2149ba4053a1831bea62600": {
+  "verdict": "correct",
+  "reason": "Provides the expected 2.0 V to 3.6 V supply range"
+ },
+ "0156dc8c654f61b577852582de4b47630e06eb3e8765c33e94a6a3c2398cd870": {
+  "verdict": "correct",
+  "reason": "Provides the expected typical standby current of 2 µA"
+ },
+ "b45b1abfededb89bb15b34c77e3cae142c332879f93b13158b0c89640f24e59c": {
+  "verdict": "correct",
+  "reason": "Provides the expected 10,000 (10 k) cycles rating"
+ },
+ "296e1d11f349620ac3bf88e1df48232a390effa957d4edfa7a5443ac017b8ecb": {
+  "verdict": "correct",
+  "reason": "Provides the exact maximum ADC clock frequency of 14,000 kHz"
+ },
+ "d4de2229af1788033247b5b681e676165dfc19c8b8fe3cbf0ccb9cb8e530b584": {
+  "verdict": "correct",
+  "reason": "Provides the exact maximum sink current of 0.025 A (25 mA)"
+ },
+ "3bc2cf54ea0a832f378e875cdd58b8036ddd1c15fff8fa4e96a35795402091c7": {
+  "verdict": "correct",
+  "reason": "System answer provides the expected 32 KB flash memory"
+ },
+ "95c5169b3915e4e690103cab5d4ef6d24e38976b915c87254a314dbdebf3cf61": {
+  "verdict": "correct",
+  "reason": "Provides the exact recommended supply voltage range 3 V to 30 V"
+ },
+ "93994a30b990b556b9cc55ae356e29b2e5c542403c65325daf3dbf40049dcd4c": {
+  "verdict": "correct",
+  "reason": "Matches the expected temperature range"
+ },
+ "e2131cbf8559d0ed862124158b6b78f2e55a6981e74c3a35b96924c76f8b6263": {
+  "verdict": "correct",
+  "reason": "Matches expected answer of unlimited duration"
+ },
+ "44fb7dd7db533f741275e9deb000018725f762561285d6f59cbd4a798b4f21a9": {
+  "verdict": "correct",
+  "reason": "Provides the expected typical value of 3 mV"
+ },
+ "d85cabb7d6cc1dbbbef71d4d029809ff90daa6168cf3749dde326c933e59c754": {
+  "verdict": "correct",
+  "reason": "System provides the expected 0.7 MHz gain bandwidth product for LM358"
+ },
+ "917a8c5530d58127c6c2207be28e2b383f1fddf560f30f7c5e8846e8df5ed346": {
+  "verdict": "correct",
+  "reason": "Provides the exact slew rate value matching expected"
+ },
+ "a64953e297604273fefa98505db58ba82fba83da4d8f334b66a7436668ab30a3": {
+  "verdict": "correct",
+  "reason": "Matches the expected voltage range"
+ },
+ "5149b762626441c9ce9147556254bb796a22984cfc137b786edc82c65782a58b": {
+  "verdict": "correct",
+  "reason": "Provides the expected 200 mA value"
+ },
+ "7ca2320e4c3500dd77190bab58634a1d2c5b0961361a30342789129610178bc8": {
+  "verdict": "correct",
+  "reason": "Provides the exact formula matching the expected answer"
+ },
+ "d85f33bcf9e07036d5861c0443647eb288dcb522ec571822d46326fed7d8e7ea": {
+  "verdict": "correct",
+  "reason": "Provides the expected typical supply current of 10 mA"
+ },
+ "c10ef498fdf6f12a40dcb004a050885ff285410db3cfa0c25fac096a814d3976": {
+  "verdict": "correct",
+  "reason": "Provides the exact expected typical trigger voltage of 1.67 V"
+ },
+ "d6a75f89213f838086d4196eda8eb45ecfb2c994285b23a3a7091ca1aa766d80": {
+  "verdict": "correct",
+  "reason": "Provides the same 110 ms pulse duration as expected"
+ },
+ "fea177e04d6baf669bd9af3037041f7a0aed70a7705c409578eaa2aa74c9d372": {
+  "verdict": "correct",
+  "reason": "Matches the expected voltage range"
+ },
+ "8d7dc89aa27e3e852981faafc00863d29602048c38b279c7e3586a6ecb218a67": {
+  "verdict": "correct",
+  "reason": "Provides the correct pin number (1)"
+ },
+ "d2dc46d240b8d94a6ece9c5e9becfc4f2591e4305952834f75bcba632f87bb7d": {
+  "verdict": "partial",
+  "reason": "Missing the IADJ × R2 term in the equation"
+ },
+ "64f125d504efaba54a3f3b9b3c33c23052042327c6ee3526bf215ccdf210d44c": {
+  "verdict": "partial",
+  "reason": "Only the maximum value (100 µA) is given, missing the typical 50 µA"
+ },
+ "3d4d72307f87106ee459f52740e55eda9a61d9c8444d18253391d2eef5e831ad": {
+  "verdict": "correct",
+  "reason": "Provides the exact maximum output current of 1500 mA"
+ },
+ "938de7e8b777ee97c18389a53b2b585ae39d49f5838bfbbeab9a4e17315ae6f6": {
+  "verdict": "correct",
+  "reason": "Provides the expected 10-bit resolution"
+ },
+ "1578e65576483f917caeadcf97872e4e6daad8b7ca9840bf6f1432edde2100bf": {
+  "verdict": "correct",
+  "reason": "Provides the expected number of single-ended inputs (8)"
+ },
+ "cdccce697532416020e31b4e869b26931958cde427740bc03c3d1d9c51021887": {
+  "verdict": "correct",
+  "reason": "Provides the exact supply voltage range 2.7 V to 5.5 V"
+ },
+ "e06b5c6c111e93223a31a4a0eb6a2c3983e3207a81c7a728e0030bc4731f32a8": {
+  "verdict": "correct",
+  "reason": "Provides the expected maximum SPI clock frequency of 1.35 MHz"
+ },
+ "beea123ecd38ffce3eef49244224804c30dc4199c1bd41b946085e4aaf2c7e52": {
+  "verdict": "correct",
+  "reason": "Provides the expected typical sample capacitor value of 20 pF"
+ },
+ "c280e0cd5bdf8cd2db67dd800a2f561fdbec0a8f553622b6a3470731c97c739e": {
+  "verdict": "correct",
+  "reason": "Provides the exact 200,000 samples per second value"
+ },
+ "938ff29fa54ad9f827037a49991897aee2a9f12333d366faefd655ca2138f049": {
+  "verdict": "correct",
+  "reason": "Provides the correct I2C address 0x76"
+ },
+ "0000adca7805d83594e27d561b2c0e41d2488250a0ffcabbfc26e9cf3dfa530f": {
+  "verdict": "correct",
+  "reason": "Provides the exact expected chip ID 0x60 and register address"
+ },
+ "cc3a2a02bc7a930e88de2bfc3adf8f50c54c3efd42bc2e43ff9235b63a8de095": {
+  "verdict": "correct",
+  "reason": "Matches the expected pressure range of 300 hPa to 1100 hPa"
+ },
+ "51b8a3a9296926b2925dd6fc5e45e4a03d8b19af965c43e80331b8617be00f2d": {
+  "verdict": "wrong",
+  "reason": "System gave 4.2 µA instead of the expected 714 µA"
+ },
+ "4bc0ccfb7524a93e4885502bbeae20f8b7f8ff8857792d9aa545c90875647f90": {
+  "verdict": "correct",
+  "reason": "Provides ±1.0 hPa which equals ±100 Pa as required"
+ },
+ "a4559340faeed26f1ab44135d95776edc14a2d4d2f9e3b5f23f16f4fd4c43110": {
+  "verdict": "correct",
+  "reason": "Provides correct 12-bit vs 10-bit comparison"
+ },
+ "46e117d8491fcb67e188f7c3e24975740253639605646abbb759caf8f9d8e3c8": {
+  "verdict": "partial",
+  "reason": "Correctly identifies LM358 as higher, but gives wrong supply voltage value for LM358 (36 V vs expected 30 V)"
+ },
+ "88fbfdc3c26a2ca838ad32431476ba0cd59143f3fd8516418d1c8c44e09476e4": {
+  "verdict": "wrong",
+  "reason": "System failed to provide ESP32 SRAM value and claimed it was unspecified"
+ }
+}
