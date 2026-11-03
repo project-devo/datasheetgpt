@@ -59,3 +59,10 @@ Decision: keep s512-o64. 1024 finds a gold page in the top 5 more often, but its
 (73% vs 77% correct, 67% vs 73% cited) because one chunk holds several similar tables and the model
 picks the wrong row (q24, q26). bge-small also embeds only the first 512 tokens of a 1024 chunk.
 512 has the best MRR and R@10, and R@10 matters for Goals 14 and 15, which work on a top-20 list.
+## Goal 14: hybrid search (2026-11-03)
+- Keyword search with websearch_to_tsquery (AND of all words) found nothing for 36 of 55 questions; gold page in top 20 for only 13. Switched to OR of the same parsed words (to_tsquery('simple', ...)): 0 empty, gold in top 20 for 52 of 55.
+- Hybrid = vector top 20 + keyword top 20 merged with reciprocal rank fusion (1 / (60 + rank)), using ranks only because cosine and ts_rank scores are on different scales.
+- Retrieval vs vector-only: R@5 71% -> 82%, R@10 87% -> 89%, MRR 0.517 -> 0.515, R@1 36% -> 31%. Numeric R@5 50% -> 100%, table 67% -> 73%, lookup 84% -> 84%, cross 60% -> 60%.
+- Answers: correct 77% -> 85%, citation 73% -> 82%; avg latency 8.2 s -> 9.6 s.
+- More gold pages reach the top 5, but rank 1 got worse: ordering is the job of the reranker (Goal 15).
+- Fixed: q07, q16, q20. New retrieval miss: q10 (STM32). Still failing: q18, q19 (ATmega), q42 (MCP3008 SPI clock), q51, q53 (cross).

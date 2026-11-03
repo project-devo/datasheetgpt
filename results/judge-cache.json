@@ -494,5 +494,193 @@
  "853586f549ca4555afd534d0df4ea21ae78ee3e3274f751a520bd2db7a3be4e6": {
   "verdict": "wrong",
   "reason": "System failed to provide the expected SRAM values and incorrectly claimed the information was unavailable"
+ },
+ "332c87dca2a299f436898a68284d3fdcbadaf991977b64e088d7ea1dd901f065": {
+  "verdict": "correct",
+  "reason": "Provides the expected 10 µA current draw for deep‑sleep mode"
+ },
+ "6501830e90cc4b364eac7176c44afcea20515c12fa04ac0521ae668ea4ccff6f": {
+  "verdict": "correct",
+  "reason": "Provides the exact 520 KB on-chip SRAM value"
+ },
+ "64c8a799a859640429235f64c088383af67ce5ab2d545e6728595dc7d1fd2802": {
+  "verdict": "correct",
+  "reason": "Matches both channel count and resolution"
+ },
+ "8e7f5c29a2f9015deba7c8f98430778c7cd52bcdf8de2ed7ddf57a6e9b9d35ca": {
+  "verdict": "correct",
+  "reason": "Provides the expected typical resistance value of 45 kΩ"
+ },
+ "324270932433fb4230a3c22126d26d94b2f5a494182bb2d1617e593f3e8549dd": {
+  "verdict": "correct",
+  "reason": "Provides the expected typical current of 240 mA"
+ },
+ "293cb544f42a1b0144e261e10fabc5c150a3e44143fa075eea9ff024407f2d6b": {
+  "verdict": "correct",
+  "reason": "Provides the exact 800 µA value"
+ },
+ "60277a01dc7af871fe56c02b457f0401b4517d60dfe56486f0b398002e7393c6": {
+  "verdict": "correct",
+  "reason": "Provides the exact expected frequency of 72 MHz"
+ },
+ "037b3bdf3b3d2856d279974850fc861bd392947c166b048bc715ac85c4574eaa": {
+  "verdict": "correct",
+  "reason": "Provides the expected 20 KB SRAM value"
+ },
+ "4952a0add4a7a5985a6e9725e3c589c519f91a5fdf97e3616210aeb105c8e213": {
+  "verdict": "correct",
+  "reason": "Provides the exact voltage range 2 V to 3.6 V"
+ },
+ "6420f533af7cda9504da18b7337e729764ec46b991a0f05859c312fc104f9984": {
+  "verdict": "correct",
+  "reason": "Provides the expected typical standby current of 2 µA"
+ },
+ "708de2348222ddac4bad03f334f5fcf7fe09f79aaab7b11487c1c58831f8b37f": {
+  "verdict": "correct",
+  "reason": "Provides the exact maximum sink current of 0.025 A as expected"
+ },
+ "79632d601ea903f3b6fd0840b495b60380f4c7d42d18d0cbd47924e833001975": {
+  "verdict": "correct",
+  "reason": "System answer provides the expected 32 KB flash memory value"
+ },
+ "3f789b79afc4b2028d741c397a3d77cb83508e35ab567aa77f327a959dc539fa": {
+  "verdict": "correct",
+  "reason": "Provides the expected 2 KB of internal SRAM"
+ },
+ "3e2877366fd07e748823096739a9ef9308d1f8bd04ac25d13ba252494fe2a9e4": {
+  "verdict": "correct",
+  "reason": "Provides the expected 100,000 cycles"
+ },
+ "713c84ae673ec84df4b65dd93008b6a6ef72ca87ad94eafa7317dea8c2c9d938": {
+  "verdict": "correct",
+  "reason": "Provides the exact 0.04 A (40 mA) value"
+ },
+ "118dce9c0f0676424b367ee9d971b716664934075e1f770b9d8e5b27515edefc": {
+  "verdict": "correct",
+  "reason": "Provides the exact recommended supply voltage range 3 V to 30 V"
+ },
+ "8716e7778ccdf62de737b6694c0f971164329b8c16ca6fad09882fbf5299ce0a": {
+  "verdict": "correct",
+  "reason": "Provides the same temperature range 0 °C to 70 °C"
+ },
+ "ae7a53ee3227cfe1d9c946de09c65a98472f5e468be17b9349afb48f18e2a250": {
+  "verdict": "correct",
+  "reason": "Matches expected answer of unlimited"
+ },
+ "756d6700a9f5de31b31e0afa70018c14fbd414b123909687fe2830d637d10ccf": {
+  "verdict": "correct",
+  "reason": "Provides the expected typical value of 3 mV"
+ },
+ "a594b9d1e3e14c5904afb26a3cb38ee5f8a2f21c70503564b136f69f29457d3f": {
+  "verdict": "correct",
+  "reason": "Provides the exact gain bandwidth product of 0.7 MHz"
+ },
+ "bc7737ee42285358d3ee0f277906a8678f7ef1a59756c9f81b9635e26e735618": {
+  "verdict": "correct",
+  "reason": "Provides the exact slew rate value matching expected"
+ },
+ "ba448b194d507b8b1110215b12e9c74ca7b4b6c010da5c87b4f8ba14b17d67d2": {
+  "verdict": "correct",
+  "reason": "Provides the exact recommended supply voltage range 4.5 V to 16 V"
+ },
+ "438e53858dd59b7bc0deedebb292ac88b351c27728f6e841deba9156e15a1e3a": {
+  "verdict": "correct",
+  "reason": "Provides the expected 200 mA value"
+ },
+ "102eedb9e539bc9afb95af868bab7358f01984da6ec67f73d98ca224193d5b80": {
+  "verdict": "correct",
+  "reason": "Provides the same formula tw ≈ 1.1 × RA × C"
+ },
+ "489ce14214b9e7d705607021997b1596aca5e82c3025c9de8b30a8bdd679a81f": {
+  "verdict": "correct",
+  "reason": "Provides the expected typical supply current of 10 mA"
+ },
+ "d28bf5ed4917666ab85ae6dfca1fec86c51c4394ffe9864f888d123c261ceb71": {
+  "verdict": "correct",
+  "reason": "Provides the exact expected typical trigger voltage of 1.67 V"
+ },
+ "802bb57cfda2cf635e158b0378ce304b9e57479c7a3e3f5f7ea6fde985fbdd37": {
+  "verdict": "correct",
+  "reason": "Provides the expected 110 ms pulse duration"
+ },
+ "f7380521160d60edba65f51c2643aa38ec18b3f754f10a4f81e2ca7f7a5bb0f9": {
+  "verdict": "correct",
+  "reason": "Matches the expected voltage range"
+ },
+ "4fbcceafd8c5cfb47bf7c56adcd065698cde514e4834ad87e41a0fea59e47117": {
+  "verdict": "correct",
+  "reason": "System correctly states ADJUST is pin 1"
+ },
+ "b3326c2406828599e2cc8db8d9603a5c5e37cb604f037155e5e23dc345712baf": {
+  "verdict": "partial",
+  "reason": "Missing the IADJ × R2 term in the equation"
+ },
+ "09ae25694a7cf13cb55b39a88e9acc68cfa2ac49da5980d187abd0dc223979d6": {
+  "verdict": "wrong",
+  "reason": "System gave 100 µA typical, but expected typical is 50 µA"
+ },
+ "361b22aad10681437e09817755bbf2e065f155bbaa3d4002664268451b583953": {
+  "verdict": "correct",
+  "reason": "Provides the exact maximum output current of 1500 mA"
+ },
+ "00d5ebfd7cea5081e415c9e9c5653258d996c19ede8219b5e682a07858940a46": {
+  "verdict": "correct",
+  "reason": "Provides the expected typical minimum load current of 3500 µA (3.5 mA)"
+ },
+ "06243fb18ea5c1a081318fb190861c4a49c7e878a98763d3072a4c08042b7f00": {
+  "verdict": "correct",
+  "reason": "Provides the expected 8 single-ended inputs"
+ },
+ "f331eedff168a341ae04a8ea818764dbe9f930e5ecdd84e97cf2ea96f25c327c": {
+  "verdict": "correct",
+  "reason": "Matches the expected voltage range"
+ },
+ "e8dcef8aac24db41209925b59b95f204043e3483469bfaee34eff0f821ddf82e": {
+  "verdict": "wrong",
+  "reason": "System answer fails to provide the expected maximum SPI clock frequency of 1.35 MHz"
+ },
+ "8d3f788be61e47b4c5a2aaf9bc7371130e9ba21e0fb05becbb87d30920b7dd8a": {
+  "verdict": "correct",
+  "reason": "Provides the expected 200 ksps sample rate"
+ },
+ "2f95e4eb260523e1d50fcc264eb71df4f9e632ff26d4c6f061d6c96b405b1d34": {
+  "verdict": "correct",
+  "reason": "Provides the correct I2C address 0x76 for SDO tied to GND"
+ },
+ "91346851a84a1a4f5bfb32289cc84ad8a2e9aead94b075e2557da24091fa985c": {
+  "verdict": "correct",
+  "reason": "Provides the exact expected chip ID value 0x60"
+ },
+ "3aed4f1ed045e9f3029ed6a4b8b8bb3f74dc4a9c2933edc57d8d6c65978c0152": {
+  "verdict": "correct",
+  "reason": "Provides the exact pressure range 300 to 1100 hPa matching expected"
+ },
+ "d73375a3d683e1a05fe1b0f833caa640eed0d23fa9d88386a818c074fa944542": {
+  "verdict": "correct",
+  "reason": "Provides the expected typical sleep-mode current of 0.1 µA"
+ },
+ "1fef32b1c31268312b068cd24c193815e569467ff70d062cdbd7633dbbc3a3f6": {
+  "verdict": "correct",
+  "reason": "Provides the exact expected value of 714 µA"
+ },
+ "73cc625d724e61c5d965bbded1b7a5cadece4a7fe53dbbc6bfdf854c183cf3ed": {
+  "verdict": "correct",
+  "reason": "Provides the exact ±100 Pa (±1.0 hPa) value"
+ },
+ "1550f65279f87b50a6e693a9cd51e41ca9d910c6aa178f0ecd42d12bde922fb7": {
+  "verdict": "wrong",
+  "reason": "System answer omitted STM32F103 channel count, failing to provide expected comparison"
+ },
+ "2befeab7fb43e9187939f32a5bd24fbc16eb88ef1dedcd3e953ffa98fe0d99ab": {
+  "verdict": "correct",
+  "reason": "Provides both 12-bit for ESP32 and 10-bit for MCP3008 as expected"
+ },
+ "cf8892d073ecfbd485293e1aca15329e4ad26ca6ddb7554f6223511aaea35b00": {
+  "verdict": "wrong",
+  "reason": "System answer lacks the BME280 sleep current and thus cannot provide the expected comparison"
+ },
+ "2ab2d975225a66ea0541a2d24cc7591c6835b6633a35e6ce414275282f1fbeeb": {
+  "verdict": "correct",
+  "reason": "Provides the same SRAM amounts (520 KB for ESP32, 20 KB for STM32F103)"
  }
 }

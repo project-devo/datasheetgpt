@@ -114,8 +114,10 @@ def generate(prompt):
     return call_groq(prompt), GROQ_MODEL
 
 
-def cache_key(question, part, k, config):
+def cache_key(question, part, k, config, mode="vector"):
     raw = f"{PROMPT_VERSION}|{config}|{k}|{part or ''}|{question.strip().lower()}"
+    if mode != "vector":
+        raw += f"|{mode}"
     return hashlib.sha256(raw.encode()).hexdigest()
 
 
@@ -137,15 +139,15 @@ def cache_put(key, question, config, response):
         )
 
 
-def ask(question, part=None, k=8, config=DEFAULT_CONFIG, use_cache=True):
-    key = cache_key(question, part, k, config)
+def ask(question, part=None, k=8, config=DEFAULT_CONFIG, use_cache=True, mode="vector"):
+    key = cache_key(question, part, k, config, mode)
     if use_cache:
         hit = cache_get(key)
         if hit:
             return {**hit, "cached": True}
 
     start = time.perf_counter()
-    chunks = retrieve(question, k=k, part=part, config=config)
+    chunks = retrieve(question, k=k, part=part, config=config, mode=mode)
     t_llm = time.perf_counter()
     print(f"retrieved {len(chunks)} chunks in {t_llm - start:.1f}s, asking the LLM...")
     text, model = generate(build_prompt(question, chunks))
