@@ -1,2 +1,4 @@
 config,recall_at_5,mrr,answer_acc,citation_acc,avg_latency_s,median_latency_s,notes
 s512-o64,0.709,0.517,0.767,0.727,8.2,3.9,"baseline: 512-token chunks, 64 overlap, vector-only, k=8, no reranker, gemini-3.1-flash-lite; 3 Groq fallbacks inflate avg latency"
+s256-o64,0.691,0.451,,,,,"256-token chunks, 64 overlap, vector-only; retrieval only (judge skipped: lowest recall)"
+s1024-o64,0.745,0.506,0.733,0.673,6.3,4.4,"1024-token chunks, 64 overlap, vector-only, k=8; bge-small embeds only the first 512 tokens; best R@5 but lower answer and citation accuracy"

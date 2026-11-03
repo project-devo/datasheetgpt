@@ -43,3 +43,19 @@ Baseline row in results/runs.csv: R@5 71%, MRR 0.517, answer 77%, citation 73%, 
 
 Main failure types: retrieval misses (1, 4, 5) cause most errors; table parsing (2, 3) causes the wrong or missing
 values when the right chunk is found. Generation alone caused only partial answers (q35 dropped a term, q36 gave max not typical).
+
+
+## Goal 13: chunk size
+
+| config | R@5 | MRR | R@10 | correct | citation |
+|---|---|---|---|---|---|
+| s256-o64 | 69% | 0.451 | 76% | not judged | not judged |
+| s512-o64 | 71% | 0.517 | 87% | 77% | 73% |
+| s1024-o64 | 75% | 0.506 | 80% | 73% | 67% |
+
+Overlap stayed at 64 so chunk size was the only change. 256 was not judged because it had the lowest recall.
+
+Decision: keep s512-o64. 1024 finds a gold page in the top 5 more often, but its answers are worse
+(73% vs 77% correct, 67% vs 73% cited) because one chunk holds several similar tables and the model
+picks the wrong row (q24, q26). bge-small also embeds only the first 512 tokens of a 1024 chunk.
+512 has the best MRR and R@10, and R@10 matters for Goals 14 and 15, which work on a top-20 list.

@@ -106,11 +106,11 @@ def load_questions():
         return [json.loads(line) for line in f if line.strip()]
 
 
-def run(questions):
+def run(questions, config):
     cache = load_cache()
     rows = []
     for q in questions:
-        r = ask(q["question"])
+        r = ask(q["question"], config=config)
         g = grade(q, r, cache)
         cite_ok = cites_gold(r["citations"], q["gold_pages"]) if q["gold_pages"] else None
         rows.append({
@@ -157,6 +157,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--ids", nargs="+", help="only these question ids")
     parser.add_argument("--limit", type=int, help="only the first N questions")
+    parser.add_argument("--config", default=DEFAULT_CONFIG)
     args = parser.parse_args()
 
     questions = load_questions()
@@ -165,10 +166,10 @@ def main():
     if args.limit:
         questions = questions[: args.limit]
 
-    rows = run(questions)
+    rows = run(questions, config=args.config)
     print_summary(rows)
 
-    out = ROOT / "results" / f"judge-{DEFAULT_CONFIG}.jsonl"
+    out = ROOT / "results" / f"judge-{args.config}.jsonl"
     with open(out, "w", encoding="utf-8") as f:
         for row in rows:
             f.write(json.dumps(row, ensure_ascii=False) + "\n")

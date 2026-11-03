@@ -19,28 +19,27 @@ def load(path):
 
 def make_row(config, notes):
     ret = load(RESULTS / f"retrieval-{config}.jsonl")
-    jud = load(RESULTS / f"judge-{config}.jsonl")
-
     ranks = [r["rank"] for r in ret]
     recall5 = sum(1 for k in ranks if k and k <= 5) / len(ranks)
     mrr = sum(1 / k for k in ranks if k) / len(ranks)
+    row = {"config": config, "recall_at_5": f"{recall5:.3f}",
+           "mrr": f"{mrr:.3f}", "notes": notes}
 
+    judge_file = RESULTS / f"judge-{config}.jsonl"
+    if not judge_file.exists():
+        return row  # retrieval only; the csv leaves the answer columns empty
+
+    jud = load(judge_file)
     correct = sum(1 for j in jud if j["verdict"] == "correct") / len(jud)
     cites = [j["cite_ok"] for j in jud if j["cite_ok"] is not None]
-    cite_acc = sum(cites) / len(cites)
-
     secs = [j["latency_ms"] / 1000 for j in jud]
-
-    return {
-        "config": config,
-        "recall_at_5": f"{recall5:.3f}",
-        "mrr": f"{mrr:.3f}",
+    row.update({
         "answer_acc": f"{correct:.3f}",
-        "citation_acc": f"{cite_acc:.3f}",
+        "citation_acc": f"{sum(cites) / len(cites):.3f}",
         "avg_latency_s": f"{statistics.mean(secs):.1f}",
         "median_latency_s": f"{statistics.median(secs):.1f}",
-        "notes": notes,
-    }
+    })
+    return row
 
 
 def save(row):
