@@ -1,0 +1,2 @@
+config,recall_at_5,mrr,answer_acc,citation_acc,avg_latency_s,median_latency_s,notes
+s512-o64,0.709,0.517,0.767,0.727,8.2,3.9,"baseline: 512-token chunks, 64 overlap, vector-only, k=8, no reranker, gemini-3.1-flash-lite; 3 Groq fallbacks inflate avg latency"
