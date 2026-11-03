@@ -1,4 +1,5 @@
 """Hugging Face Space entry point: the FastAPI API plus a small Gradio page."""
+import os
 import sys
 from pathlib import Path
 
@@ -13,15 +14,7 @@ from main import PARTS, app  # noqa: E402
 from answer import ask  # noqa: E402
 from retrieve import get_model  # noqa: E402
 
-try:
-    import spaces  # only installed on Hugging Face ZeroGPU Spaces
 
-    @spaces.GPU
-    def _zerogpu_placeholder():
-        """ZeroGPU needs one @spaces.GPU function to start. This app runs on CPU and never calls it."""
-        return None
-except ImportError:
-    pass  # running on your laptop, where the spaces package isn't installed
 
 get_model()  # load bge-small at startup, so the first question isn't slow
 
@@ -49,4 +42,5 @@ with gr.Blocks() as demo:
 app = gr.mount_gradio_app(app, demo, path="/")
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=7860)
+    port = int(os.environ.get("PORT", 7860))  # Render sets PORT; locally it's 7860
+    uvicorn.run(app, host="0.0.0.0", port=port)
