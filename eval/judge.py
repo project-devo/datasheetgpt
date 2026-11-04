@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parent.parent
 load_dotenv(ROOT / ".env")
 sys.path.insert(0, str(ROOT / "api"))
 from answer import ask  # noqa: E402
-from retrieve import DEFAULT_CONFIG  # noqa: E402
+from retrieve import DEFAULT_CONFIG, MODES  # noqa: E402
 
 JUDGE_MODEL = "openai/gpt-oss-120b"
 JUDGE_VERSION = "j1"  # bump when the rubric or judge model changes
@@ -106,11 +106,11 @@ def load_questions():
         return [json.loads(line) for line in f if line.strip()]
 
 
-def run(questions, config, mode="vector"):
+def run(questions, config, mode="vector", use_cache=True):
     cache = load_cache()
     rows = []
     for q in questions:
-        r = ask(q["question"], config=config, mode=mode)
+        r = ask(q["question"], config=config, mode=mode, use_cache=use_cache)
         g = grade(q, r, cache)
         cite_ok = cites_gold(r["citations"], q["gold_pages"]) if q["gold_pages"] else None
         rows.append({
@@ -158,7 +158,8 @@ def main():
     parser.add_argument("--ids", nargs="+", help="only these question ids")
     parser.add_argument("--limit", type=int, help="only the first N questions")
     parser.add_argument("--config", default=DEFAULT_CONFIG)
-    parser.add_argument("--mode", choices=["vector", "hybrid", "rerank"], default="vector")
+    parser.add_argument("--mode", choices=MODES, default="vector")
+    parser.add_argument("--no-cache", action="store_true", help="ask the LLM again instead of reusing cached answers")
     args = parser.parse_args()
 
     questions = load_questions()
@@ -167,7 +168,7 @@ def main():
     if args.limit:
         questions = questions[: args.limit]
 
-    rows = run(questions, config=args.config, mode=args.mode)
+    rows = run(questions, config=args.config, mode=args.mode, use_cache=not args.no_cache)
     print_summary(rows)
 
     label = args.config + ("" if args.mode == "vector" else f"-{args.mode}")

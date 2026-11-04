@@ -862,5 +862,185 @@
  "a59fbba4c789700bd63090eb21f9ecd657783114d2f19ee6a1e0430bb85ecf49": {
   "verdict": "correct",
   "reason": "Provides both SRAM amounts matching expected values"
+ },
+ "aada0d7d5168a200f363945895339bd6925199f3c9e5cdfa55d20b94881cc930": {
+  "verdict": "correct",
+  "reason": "Provides the same 10 µA current value for deep‑sleep mode"
+ },
+ "ec60c4a03ff787a53b662297907326421b10165582d66b1249e25e26748b21cd": {
+  "verdict": "correct",
+  "reason": "Provides the expected 520 KB of on-chip SRAM"
+ },
+ "0c2c16b1065c27959cad4cd3f85aefefaa01c0519c2d68f138db7eedea5a4da3": {
+  "verdict": "correct",
+  "reason": "Provides both the 18-channel count and 12-bit resolution as expected"
+ },
+ "00cabbbcbf5a84a8c5abd20e30d6aa2bc9505965ad060961ecb1fe500ee4544c": {
+  "verdict": "correct",
+  "reason": "Provides the exact expected value of 5 µA"
+ },
+ "ea3a1d9582e180b13127d735f4ebd53b08a17475e78c14920f61a18ab4024fa9": {
+  "verdict": "correct",
+  "reason": "Provides the expected typical resistance value of 45 kΩ"
+ },
+ "04c9ee61de7a080aba271956a937f66a7a051a406de40ebb44b5856aee142764": {
+  "verdict": "correct",
+  "reason": "Provides the expected typical current of 240 mA"
+ },
+ "ab75245c74e92f68cf9db5396e97ec41b4bb2f8a7f0e4db395ba2b25ef20e0db": {
+  "verdict": "correct",
+  "reason": "Provides the exact 800 µA value"
+ },
+ "1441409446994dab715bd163b660a1e51cbee0cc3b3c837d87e97e505e24cf15": {
+  "verdict": "correct",
+  "reason": "Provides the exact 72 MHz frequency as expected"
+ },
+ "084b47992a574884f947889b0a828d8e583b804a250dbb2ea03107cc9fe8d2b0": {
+  "verdict": "correct",
+  "reason": "Provides the expected 20 KB SRAM value"
+ },
+ "66069afb0b5e192b56944125616c249b6348ca10f5100771094f0f6138d4750a": {
+  "verdict": "correct",
+  "reason": "Provides the exact supply voltage range 2 V to 3.6 V"
+ },
+ "a730d4caa8aeb4fc72d77f83935422978e365583baa02f9aca55bceade221d7f": {
+  "verdict": "correct",
+  "reason": "Provides the expected typical standby current of 2 µA"
+ },
+ "ee0e5551e24a99e893f6276bd0c6c68e898f66fc41c2712a0eecb7899e682b7e": {
+  "verdict": "correct",
+  "reason": "Provides the exact maximum ADC clock frequency of 14,000 kHz as expected"
+ },
+ "fb3b3d8ce3076be9c43d4b77583902092e01736aaf1ea217faae064ca3ea02e2": {
+  "verdict": "correct",
+  "reason": "Provides the exact maximum sink current of 0.025 A (25 mA)"
+ },
+ "e16df406a60eaf1aaa53938f8a6fda6ddacd44157dbcdb097ab2eaff168fd5fd": {
+  "verdict": "correct",
+  "reason": "System answer provides the expected 32 KB flash memory value"
+ },
+ "85a9dc3c954310b2f3c1d55174a93490f5c3dfaf5ab6a3404d55d507d374abbb": {
+  "verdict": "correct",
+  "reason": "Provides the same 2 KB (2048 bytes) of internal SRAM as expected"
+ },
+ "603b91ea2d2465414399f668c5c800d32e47f6a0d0b927b118c230a0c7f7460b": {
+  "verdict": "correct",
+  "reason": "Provides the exact expected value of 100,000 cycles"
+ },
+ "76f06cee0474ad0892cb0086cb69283d3e953e47652edc8bc1e89f52b64fa580": {
+  "verdict": "wrong",
+  "reason": "System gave 7.8 MHz instead of the expected 10 MHz"
+ },
+ "0ed89ee50e3787481bb6c72c685db93d0ed0a29923849040d79c7cb45b95b488": {
+  "verdict": "wrong",
+  "reason": "Typical active supply current value does not match expected (2.5 mA vs 5.2 mA)"
+ },
+ "f89454da58921616484837375e164e854cfc3f7c72be2f501f4b97858d41c775": {
+  "verdict": "correct",
+  "reason": "Provides the exact 0.04 A (40 mA) value matching the expected answer"
+ },
+ "b264b523ae891037818b45f5bf03fdc1feba3713c7a1bb8d856a5cfa5a227a1f": {
+  "verdict": "correct",
+  "reason": "Provides the exact 3 V to 30 V range"
+ },
+ "9b299b98da0e68db37a0f20d7c554caed346770f5244e9f1983126e29448e6a1": {
+  "verdict": "correct",
+  "reason": "Matches the expected temperature range"
+ },
+ "ca8e33a79233d54911bc46475c51d8f70d34549363e879d3ea9164724e16aab3": {
+  "verdict": "correct",
+  "reason": "System answer matches expected unlimited duration"
+ },
+ "ded4839773cdb5888bd599d5e3288f4bd4cd9e3730a83250b8427ab1e7825378": {
+  "verdict": "wrong",
+  "reason": "System gave 7 mV as typical, but expected typical is 3 mV"
+ },
+ "63a73737249101be6ef18ef6303360799ee116b62a19dbd09d6699beb204a65a": {
+  "verdict": "wrong",
+  "reason": "The system gave 1.2 MHz instead of the expected 0.7 MHz"
+ },
+ "fcdcf77a52e5eba0c680d5a175d295074dbf746aee5911ec32b3e1572fe27063": {
+  "verdict": "correct",
+  "reason": "Provides the exact slew rate value matching expected (0.3 V/µs = 300 V/ms)"
+ },
+ "689c38a39cc8c661596d6e7c0a70ddba7c1989ed7715164258b90ad4ca08a199": {
+  "verdict": "correct",
+  "reason": "Provides the exact recommended supply voltage range 4.5 V to 16 V"
+ },
+ "c590abc54dde031e1cb463d1887f175d8bd0c620cddd75d86f59a2cb2e07cecd": {
+  "verdict": "correct",
+  "reason": "Provides the same formula tw ≈ 1.1 × RA × C"
+ },
+ "a2078174d0d2a4eff6df9d17b432679453b52650c4771bc75ebf86f3e3943439": {
+  "verdict": "partial",
+  "reason": "Provides typical 10 mA but omits the maximum 15 mA value"
+ },
+ "f5c822ff91fe5a5a71b582df3f3a67534f42d60d8643733a42715fe713977bef": {
+  "verdict": "correct",
+  "reason": "Provides the expected 110 ms pulse duration"
+ },
+ "384ce409fb1111e7e0308f314b6984791bb574fa50e276be03ff82c3a6d2da39": {
+  "verdict": "partial",
+  "reason": "Missing the IADJ × R2 term in the equation"
+ },
+ "7087749b568f761e4293e892bbfa240f09bdf5ea893f4e9582e07200297c724d": {
+  "verdict": "partial",
+  "reason": "Provides only the maximum 100 µA, missing the typical 50 µA value"
+ },
+ "2af77ed87dda077c2a7a0f20e390b900ec1e08efeb246b6f2f2480b454218071": {
+  "verdict": "correct",
+  "reason": "Provides the exact maximum output current of 1.5 A (1500 mA)"
+ },
+ "955c748034948d0562600491155e74c17e4c005961875c1988d44e72bd67d46a": {
+  "verdict": "correct",
+  "reason": "System gave 3.5 mA, which equals the expected 3500 µA"
+ },
+ "f848bdf61195d2c0b0623c9850ec82d17adac3e70be5d5989f126a842088221e": {
+  "verdict": "correct",
+  "reason": "Provides the expected 10-bit resolution"
+ },
+ "38b1d329e10b531bc4cbf36bbd55dc761d8fa81a5b49889572ed0a2a913d0c1d": {
+  "verdict": "correct",
+  "reason": "Provides the expected 8 single-ended inputs"
+ },
+ "7627471a43fc9d283400189e36cb79831892ef7140ca132204100082b90effff": {
+  "verdict": "correct",
+  "reason": "Provides the expected 200 ksps value"
+ },
+ "4c6209883bf92aba55890f7c5f1ab91bdc3c7bf2a53c85cce154eaf032502c4d": {
+  "verdict": "correct",
+  "reason": "Provides the correct I2C address 0x76 for SDO tied to GND"
+ },
+ "ab75371f6ad6bb32a792ce154e6a346bbeb46031c4b510c67bb3169c5c6926cc": {
+  "verdict": "correct",
+  "reason": "Provides the exact chip ID 0x60 as expected"
+ },
+ "f40a5f6f2024b449c04082db35693395f3182baa43dc769ac12d65b3432247e8": {
+  "verdict": "correct",
+  "reason": "Provides the exact pressure range 300 hPa to 1100 hPa"
+ },
+ "c5b3f4e0e3203e7f0cacce5d5fa4ed39258c749449632dc20614bb846787fd43": {
+  "verdict": "correct",
+  "reason": "Provides the exact expected current value"
+ },
+ "222d461e8168d4f670945aa46e12c8791951a61eddf7dbd4c18a1fb3efaea1b2": {
+  "verdict": "correct",
+  "reason": "System gives ±1.0 hPa, matching ±100 Pa"
+ },
+ "a10e99f6561d9258cd1433d2a9744f3d30d614e0180346e259e9148992926209": {
+  "verdict": "wrong",
+  "reason": "System failed to state that STM32F103 has up to 16 channels and thus did not provide the correct comparison"
+ },
+ "905a607fe3d5e728a59cee8467a0449cfe7b995fc1e530825a121492e8ec31bb": {
+  "verdict": "correct",
+  "reason": "Provides the correct 12-bit vs 10-bit comparison"
+ },
+ "03bc82e6054b8c8631fbca786fd595be0828ef881753cbabfeba0d44691e6c1e": {
+  "verdict": "wrong",
+  "reason": "System answer lacks the BME280 value and claims no data, contradicting expected 0.1 µA"
+ },
+ "75ee4d215ab2459e05de5690021bf141948c86b79cd1a8d6ed12e7be74e9b0c5": {
+  "verdict": "correct",
+  "reason": "Provides the same SRAM amounts (520 KB vs 20 KB) as expected"
  }
 }

@@ -13,7 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "ingest"))
-from retrieve import DEFAULT_CONFIG, retrieve  # noqa: E402
+from retrieve import DEFAULT_CONFIG, MODES, retrieve  # noqa: E402
 
 K = 10
 TYPES = ["lookup", "table", "numeric", "cross"]
@@ -75,7 +75,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--filter", action="store_true", help="search only the question's part")
     parser.add_argument("--config", default=DEFAULT_CONFIG)
-    parser.add_argument("--mode", choices=["vector", "hybrid", "rerank"], default="vector")
+    parser.add_argument("--mode", choices=MODES, default="vector")
     args = parser.parse_args()
 
     rows = run(load_questions(), args.filter, args.config, args.mode)

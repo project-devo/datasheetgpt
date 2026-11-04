@@ -3,7 +3,9 @@ from fastembed import TextEmbedding
 
 from db import connect
 
-from rerank import rerank
+from rerank import RERANK_MODELS, rerank
+
+MODES = ["vector", "hybrid", *RERANK_MODELS]
 
 MODEL = "BAAI/bge-small-en-v1.5"
 QUERY_PREFIX = "Represent this sentence for searching relevant passages: "
@@ -48,7 +50,7 @@ def vector_search(question, k=5, part=None, config=DEFAULT_CONFIG):
     params.append(k)
 
     with connect() as conn:
-        conn.execute("SET hnsw.iterative_scan = strict_order")
+
         rows = conn.execute(sql, params).fetchall()
 
     return [
@@ -101,9 +103,9 @@ def hybrid_search(question, k=5, part=None, config=DEFAULT_CONFIG):
 
 
 def retrieve(question, k=5, part=None, config=DEFAULT_CONFIG, mode="vector"):
-    if mode == "rerank":
+    if mode in RERANK_MODELS:
         # hybrid finds a wide pool of 20, the cross-encoder picks the best k
-        return rerank(question, hybrid_search(question, POOL, part, config), k)
+        return rerank(question, hybrid_search(question, POOL, part, config), k, RERANK_MODELS[mode])
     if mode == "hybrid":
         return hybrid_search(question, k, part, config)
     return vector_search(question, k, part, config)

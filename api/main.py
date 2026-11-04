@@ -31,6 +31,7 @@ class AskResponse(BaseModel):
     not_found: bool
     model: str
     config: str
+    mode: str
     cached: bool
     latency_ms: int
     sources: list[dict]

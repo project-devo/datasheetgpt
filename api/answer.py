@@ -25,6 +25,7 @@ GROQ_MODEL = "openai/gpt-oss-20b"
 RETRY_CODES = {429, 500, 503}  # rate limit, server error, overloaded
 PROMPT_VERSION = "v3"
 NOT_FOUND = "Not found in the datasheets."
+DEFAULT_MODE = "hybrid"  # Goal 16: live setup (reranker too big for Render free)
 
 SYSTEM_PROMPT = f"""You answer questions about electronic component datasheets.
 Use ONLY the numbered context blocks you are given. Do not use outside knowledge.
@@ -139,12 +140,12 @@ def cache_put(key, question, config, response):
         )
 
 
-def ask(question, part=None, k=8, config=DEFAULT_CONFIG, use_cache=True, mode="vector"):
+def ask(question, part=None, k=8, config=DEFAULT_CONFIG, use_cache=True, mode=DEFAULT_MODE):
     key = cache_key(question, part, k, config, mode)
     if use_cache:
         hit = cache_get(key)
         if hit:
-            return {**hit, "cached": True}
+            return {**hit, "mode": mode, "cached": True}
 
     start = time.perf_counter()
     chunks = retrieve(question, k=k, part=part, config=config, mode=mode)
@@ -168,7 +169,7 @@ def ask(question, part=None, k=8, config=DEFAULT_CONFIG, use_cache=True, mode="v
     }
     if text:
         cache_put(key, question, config, response)
-    return {**response, "cached": False}
+    return {**response, "mode": mode, "cached": False}
 
 
 

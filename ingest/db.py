@@ -1,6 +1,10 @@
 """Database helpers: connect to Neon and create the chunks table."""
 import os
 
+import atexit
+
+from psycopg_pool import ConnectionPool
+
 import psycopg
 from dotenv import load_dotenv
 from pgvector.psycopg import register_vector
@@ -37,10 +41,34 @@ CREATE TABLE IF NOT EXISTS answer_cache (
 """
 
 
-def connect():
-    conn = psycopg.connect(os.environ["DATABASE_URL"])
+_pool = None
+
+
+def _setup(conn):
+    """Runs once for each new connection the pool opens."""
     register_vector(conn)
-    return conn
+    conn.execute("SET hnsw.iterative_scan = strict_order")
+    conn.commit()
+
+
+def get_pool():
+    global _pool
+    if _pool is None:
+        _pool = ConnectionPool(
+            os.environ["DATABASE_URL"],
+            min_size=1,
+            max_size=4,
+            configure=_setup,
+            check=ConnectionPool.check_connection,
+            open=True,
+        )
+        atexit.register(_pool.close)
+    return _pool
+
+
+def connect():
+    """Borrow a connection. `with connect() as conn:` gives it back at the end."""
+    return get_pool().connection()
 
 
 def create_schema():

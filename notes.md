@@ -82,3 +82,12 @@ Hybrid top 20 reranked by BAAI/bge-reranker-base (fastembed cross-encoder, CPU),
 - 22/60 answers came from the Groq fallback (Gemini 503 overload), so the answer row mixes two models.
 - Cost: retrieval 4-5 s -> 10-17 s on a laptop CPU. The model is 1.06 GB, too big for free Render (512 MB).
 - Remaining wrong answers are table values (typ vs max) and "Not found" (q12, q35, q53), not ranking.
+
+## Goal 16: final setup (2026-11-04)
+
+- Shared DB connection: db.connect() now lends connections from a psycopg ConnectionPool (min 1, max 4, each checked before use because Neon sleeps after 5 min). Hybrid retrieval 4-5 s -> 1.2 s avg (median 1.0 s) on the laptop, same ranks.
+- Small reranker tried: Xenova/ms-marco-MiniLM-L-6-v2 (0.08 GB): R@1 44%, R@5 82%, R@10 96%, MRR 0.598, 3.7 s retrieval. Same R@5 as hybrid and weaker on table (67%) and numeric (70%) questions.
+- Live config: hybrid, no reranker. bge-reranker-base is the best config (R@5 91%, MRR 0.750, 88% correct) but needs 1.06 GB, and Render free has 512 MB and 0.1 CPU. MiniLM adds latency for no R@5 gain. Hybrid keeps retrieval near 1 s and fits in memory. The reranker is reported as the best offline result.
+- Fresh hybrid judge (no cache): 80% correct, 76% citation. 41 Gemini answers were 83% correct (median 3.2 s); 19 Groq fallbacks (Gemini 503 on q01-q27) were 74% correct, 37 s avg. The Goal 14 run (all Gemini) was 85%.
+- Results table: results/results.md. Chart: results/recall_at_5.png (scripts/plot_results.py).
+- Goal 12 failures on the live setup: fixed q07, q16, q20, q38, q49, q55. Still failing: q18, q19 (ATmega gold pages not in the hybrid top 10), q51, q54 (cross-part). bge rerank fixes q18, q51 and q54 and makes q19 partial.
