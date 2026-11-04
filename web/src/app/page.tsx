@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { askStream, Citation, PARTS, StreamEvent, ToolRun, wakeServer } from "@/lib/api";
 
 const EXAMPLES = [
-  { part: "LM358", q: "What is the maximum supply voltage of the LM358?" },
+  { part: "LM358", q: "What is the typical input offset voltage of the LM358 at 25 °C?" },
   { part: "ESP32", q: "How much current does the ESP32 draw in deep-sleep mode?" },
   { part: "ATmega328P", q: "How much internal SRAM does the ATmega328P have?" },
   { part: "MCP3008", q: "How many single-ended inputs does the MCP3008 offer?" },
