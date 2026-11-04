@@ -66,3 +66,19 @@ picks the wrong row (q24, q26). bge-small also embeds only the first 512 tokens 
 - Answers: correct 77% -> 85%, citation 73% -> 82%; avg latency 8.2 s -> 9.6 s.
 - More gold pages reach the top 5, but rank 1 got worse: ordering is the job of the reranker (Goal 15).
 - Fixed: q07, q16, q20. New retrieval miss: q10 (STM32). Still failing: q18, q19 (ATmega), q42 (MCP3008 SPI clock), q51, q53 (cross).
+
+## Goal 15: Reranking (2026-11-04)
+
+Hybrid top 20 reranked by BAAI/bge-reranker-base (fastembed cross-encoder, CPU), keep top k.
+
+| config | R@1 | R@5 | R@10 | MRR | correct | citation | avg latency |
+|---|---|---|---|---|---|---|---|
+| hybrid | 31% | 82% | 89% | 0.515 | 85% | 82% | 9.6 s |
+| hybrid + rerank | 62% | 91% | 98% | 0.750 | 88% | 84% | 24.9 s |
+
+- R@5 by type: lookup 96%, table 80%, numeric 90%, cross 100%.
+- Still not in top 5: q13, q19, q21, q25, q42 (4 of 5 are table questions).
+- Answer gain is small (+2 questions) because k=8 already held the gold page most of the time.
+- 22/60 answers came from the Groq fallback (Gemini 503 overload), so the answer row mixes two models.
+- Cost: retrieval 4-5 s -> 10-17 s on a laptop CPU. The model is 1.06 GB, too big for free Render (512 MB).
+- Remaining wrong answers are table values (typ vs max) and "Not found" (q12, q35, q53), not ranking.

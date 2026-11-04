@@ -3,3 +3,4 @@ s512-o64,0.709,0.517,0.767,0.727,8.2,3.9,"baseline: 512-token chunks, 64 overlap
 s256-o64,0.691,0.451,,,,,"256-token chunks, 64 overlap, vector-only; retrieval only (judge skipped: lowest recall)"
 s1024-o64,0.745,0.506,0.733,0.673,6.3,4.4,"1024-token chunks, 64 overlap, vector-only, k=8; bge-small embeds only the first 512 tokens; best R@5 but lower answer and citation accuracy"
 s512-o64-hybrid,0.818,0.515,0.850,0.818,9.6,5.9,"hybrid: vector top 20 + Postgres full-text (OR query) top 20, merged with RRF k=60; k=8, gemini-3.1-flash-lite, 0 Groq fallbacks; retrieval ~4-5 s (two DB connections)"
+s512-o64-rerank,0.909,0.750,0.883,0.836,24.9,20.1,"hybrid top 20 reranked by BAAI/bge-reranker-base (fastembed, CPU), top 8 to the LLM; 22/60 answers by Groq gpt-oss-20b fallback (Gemini 503s), retries inflate latency; retrieval 10-17 s on laptop CPU"

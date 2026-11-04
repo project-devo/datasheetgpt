@@ -158,7 +158,7 @@ def main():
     parser.add_argument("--ids", nargs="+", help="only these question ids")
     parser.add_argument("--limit", type=int, help="only the first N questions")
     parser.add_argument("--config", default=DEFAULT_CONFIG)
-    parser.add_argument("--mode", choices=["vector", "hybrid"], default="vector")
+    parser.add_argument("--mode", choices=["vector", "hybrid", "rerank"], default="vector")
     args = parser.parse_args()
 
     questions = load_questions()
@@ -170,7 +170,7 @@ def main():
     rows = run(questions, config=args.config, mode=args.mode)
     print_summary(rows)
 
-    label = args.config + ("-hybrid" if args.mode == "hybrid" else "")
+    label = args.config + ("" if args.mode == "vector" else f"-{args.mode}")
     out = ROOT / "results" / f"judge-{label}.jsonl"
     with open(out, "w", encoding="utf-8") as f:
         for row in rows:

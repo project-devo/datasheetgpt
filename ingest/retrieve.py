@@ -3,6 +3,8 @@ from fastembed import TextEmbedding
 
 from db import connect
 
+from rerank import rerank
+
 MODEL = "BAAI/bge-small-en-v1.5"
 QUERY_PREFIX = "Represent this sentence for searching relevant passages: "
 DEFAULT_CONFIG = "s512-o64"
@@ -99,6 +101,9 @@ def hybrid_search(question, k=5, part=None, config=DEFAULT_CONFIG):
 
 
 def retrieve(question, k=5, part=None, config=DEFAULT_CONFIG, mode="vector"):
+    if mode == "rerank":
+        # hybrid finds a wide pool of 20, the cross-encoder picks the best k
+        return rerank(question, hybrid_search(question, POOL, part, config), k)
     if mode == "hybrid":
         return hybrid_search(question, k, part, config)
     return vector_search(question, k, part, config)

@@ -8,6 +8,7 @@ Usage: python eval/retrieval.py [--filter] [--config s512-o64]
 import argparse
 import json
 import sys
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -37,11 +38,13 @@ def run(questions, use_filter, config, mode):
             continue
         # cross questions cover two parts, so they always search everything
         part = q["parts"][0] if use_filter and len(q["parts"]) == 1 else None
+        t = time.perf_counter()
         results = retrieve(q["question"], k=K, part=part, config=config, mode=mode)
+        ms = round((time.perf_counter() - t) * 1000)
         rank = first_gold_rank(results, q["gold_pages"])
         got = [f"{r['part']} p{r['page']}" for r in results]
-        rows.append({"id": q["id"], "type": q["type"], "rank": rank, "got": got})
-        print(f"{q['id']} {q['type']:<8} rank {rank or '-'}")
+        rows.append({"id": q["id"], "type": q["type"], "rank": rank, "got": got, "ms": ms})
+        print(f"{q['id']} {q['type']:<8} rank {rank or '-':<3} {ms} ms")
     return rows
 
 
@@ -72,18 +75,19 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--filter", action="store_true", help="search only the question's part")
     parser.add_argument("--config", default=DEFAULT_CONFIG)
-    parser.add_argument("--mode", choices=["vector", "hybrid"], default="vector")
+    parser.add_argument("--mode", choices=["vector", "hybrid", "rerank"], default="vector")
     args = parser.parse_args()
 
     rows = run(load_questions(), args.filter, args.config, args.mode)
     print_table(rows)
+    print(f"\nAverage retrieval time {sum(r['ms'] for r in rows) / len(rows) / 1000:.1f} s")
 
     misses = [r for r in rows if not r["rank"] or r["rank"] > 5]
     print(f"\nNot in top 5 ({len(misses)}):")
     for r in misses:
         print(f"  {r['id']} {r['type']:<8} rank {r['rank'] or '-'} | {', '.join(r['got'][:5])}")
 
-    label = args.config + ("-hybrid" if args.mode == "hybrid" else "")
+    label = args.config + ("" if args.mode == "vector" else f"-{args.mode}")
     out = ROOT / "results" / f"retrieval-{label}{'-filter' if args.filter else ''}.jsonl"
     out.parent.mkdir(exist_ok=True)
     with open(out, "w", encoding="utf-8") as f:
