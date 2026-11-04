@@ -90,8 +90,11 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [waking, setWaking] = useState(false);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+  const [android, setAndroid] = useState(false);
 
   useEffect(wakeServer, []);
+  // Chrome on Android opens PDFs at page 1 and ignores #page=N, so tell the reader which page to go to.
+  useEffect(() => setAndroid(/Android/i.test(navigator.userAgent)), []);
 
   async function ask(q: string) {
     q = q.trim();
@@ -105,6 +108,9 @@ export default function Home() {
     setError("");
     setLoading(true);
     setWaking(false);
+    // On a phone: close the keyboard and jump to the top, where the answer appears.
+    inputRef.current?.blur();
+    window.scrollTo({ top: 0, behavior: "smooth" });
 
     // Free Render sleeps when idle; if nothing arrives in 3 s, say so.
     let gotFirst = false;
@@ -334,6 +340,11 @@ export default function Home() {
                       </a>
                     ))}
                   </div>
+                  {android && (
+                    <p className="mt-2 text-xs text-zinc-400">
+                      On Android the PDF opens at page 1. Scroll to the page number shown on the chip.
+                    </p>
+                  )}
                 </div>
               )}
 
