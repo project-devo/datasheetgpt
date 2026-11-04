@@ -19,6 +19,13 @@ from retrieve import get_model  # noqa: E402
 get_model()  # load bge-small at startup, so the first question isn't slow
 
 
+def format_tool(run):
+    """voltage_divider(vin=3.3, r1=10000, r2=4700) = 1.055"""
+    args = ", ".join(f"{k}={v}" for k, v in run["args"].items())
+    out = f"{run['result']:.4g}" if "result" in run else f"error: {run['error']}"
+    return f"{run['tool']}({args}) = {out}"
+
+
 def answer_question(question, part):
     question = (question or "").strip()
     if len(question) < 3:
@@ -26,7 +33,11 @@ def answer_question(question, part):
     result = ask(question, part=None if part == "any" else part)
     cites = ", ".join(f"{c['part'].upper()} p.{c['page']}" for c in result["citations"])
     info = f"Sources: {cites or 'none'} | model {result['model']} | {result['latency_ms']} ms"
-    return result["answer"], info
+    answer = result["answer"]
+    tools = result.get("tools") or []
+    if tools:
+        answer += "\n\nCalculator: " + "; ".join(format_tool(t) for t in tools)
+    return answer, info
 
 
 with gr.Blocks() as demo:

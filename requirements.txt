@@ -15,4 +15,3 @@ uvicorn==0.54.0
 
 gradio==6.31.0
 
-matplotlib==3.11.2

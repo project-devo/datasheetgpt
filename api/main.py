@@ -35,6 +35,7 @@ class AskResponse(BaseModel):
     cached: bool
     latency_ms: int
     sources: list[dict]
+    tools: list[dict] = []  # Goal 17: calculator runs {tool, args, result or error}
 
 
 @app.post("/ask", response_model=AskResponse)
