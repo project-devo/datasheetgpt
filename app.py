@@ -1,4 +1,4 @@
-"""Hugging Face Space entry point: the FastAPI API plus a small Gradio page."""
+"""Server entry point: the FastAPI API plus a small Gradio page at /."""
 import os
 import sys
 from pathlib import Path
